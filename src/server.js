@@ -4,14 +4,14 @@ var http = require('http');
 //var converter = new MarkShow();
 //var markdown = converter.makeHtml;
 var showdown = require(__dirname + "/showdown");
-var converter = new showdown.Converter({tables: true});
+var converter = new showdown.Converter({tables: true, ghCodeBlocks: true});
 var fs = require('fs');
 var path = require('path');
 var mime = require('mime');
 var _ = require('underscore');
 var express = require('express');
 var app = express();
-var mdDir = '/MarkShow';
+var mdDir = '/api-docs';
 
 var mainDir = __dirname + '/..';
 
