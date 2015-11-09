@@ -54,3 +54,9 @@ If make changes to MarkShow and distribute them, you must call the project somet
 MarkShow was created by Eric Vicenti in Silicon Valley to standardize rich text for the web.
 
 Built on the strong shoulders of projects like [MarkDown](http://daringfireball.net/projects/markdown/basics) and [Showdown](https://github.com/coreyti/showdown).
+
+### tables
+| h1    |    h2   |      h3 |
+|:------:|:-------:|:--------:|
+| 100   | [a][1]  | ![b][2] |
+| *foo* | **bar** | ~~baz~~ |

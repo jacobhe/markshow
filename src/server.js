@@ -1,8 +1,10 @@
 
 var http = require('http');
-var MarkShow = require(__dirname+'/markshow');
-var converter = new MarkShow();
-var markdown = converter.makeHtml;
+//var MarkShow = require(__dirname+'/markshow');
+//var converter = new MarkShow();
+//var markdown = converter.makeHtml;
+var showdown = require(__dirname + "/showdown");
+var converter = new showdown.Converter({tables: true});
 var fs = require('fs');
 var path = require('path');
 var mime = require('mime');
@@ -99,7 +101,7 @@ fs.readFile(mainDir + '/template.html', 'utf8', function (error, templateStr) {
       var title = (parts[parts.length-1] == '') ? parts[parts.length-2] : parts[parts.length-1];
       res.send(html({
         title: mainTitle + (title ? ' | '+title : ''),
-        body: markdown(data),
+        body: converter.makeHtml(data),
         url: req.url,
         links: links,
         useMin: config.useMin
